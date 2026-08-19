@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anita Kuang — Portfolio</title>
+<style>
+  :root {
+    --accent: #4f9d3a;
+    --ink: #24292e;
+    --grey: #57606a;
+    --border: #e1e4e8;
+    --bg: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+  header h1 {
+    font-size: 2rem;
+    margin: 0 0 4px;
+  }
+  header .tagline {
+    color: var(--grey);
+    font-size: 1.05rem;
+    margin: 0 0 20px;
+  }
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 40px;
+  }
+  .contact-links a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.95rem;
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+  .contact-links a:hover { background: #f6f8fa; }
+  .intro {
+    font-size: 1.05rem;
+    color: var(--ink);
+    margin-bottom: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2.section-title {
+    font-size: 1.4rem;
+    margin: 0 0 24px;
+  }
+  .project {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+  }
+  .project h3 {
+    margin: 0 0 4px;
+    font-size: 1.2rem;
+  }
+  .project .role {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+  .project p {
+    margin: 0 0 12px;
+    color: var(--ink);
+  }
+  .project .desc-list {
+    margin: 0 0 12px;
+    padding-left: 20px;
+  }
+  .project .desc-list li {
+    margin-bottom: 4px;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .tag {
+    background: #f0f5ec;
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+  code.snippet {
+    display: block;
+    background: #f6f8fa;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.85rem;
+    white-space: pre-wrap;
+    color: #24292e;
+    margin-bottom: 12px;
+  }
+  footer {
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    color: var(--grey);
+    font-size: 0.9rem;
+  }
+  footer .certs {
+    margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Anita Kuang</h1>
+    <p class="tagline">Dynamics 365 / Power Platform Consultant &mdash; Analyst / D365 Consultant</p>
+    <div class="contact-links">
+      <a href="mailto:Anita_kuang@hotmail.com">Anita_kuang@hotmail.com</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Upwork</a>
+    </div>
+  </header>
+
+  <div class="intro">
+    Digital platform specialist with hands-on experience delivering low-code solutions across commercial and healthcare organisations &mdash; Dynamics 365 CE, Power Platform, and the automation layer that connects them to the rest of the business. This page collects a few recent projects, from CRM-driven SharePoint automation to a standalone AI agent built outside the Microsoft ecosystem.
+  </div>
+
+  <h2 class="section-title">Projects</h2>
+
+  <div class="project">
+    <h3>Automated SharePoint Document Folder Creation for Opportunities</h3>
+    <div class="role">Marley New Zealand Ltd &middot; Analyst / D365 Consultant</div>
+    <p>A Power Automate cloud flow triggered on Opportunity create/modify that automatically provisions the correct SharePoint document location &mdash; nested under the related Project folder where one exists &mdash; with conditional logic to check for an existing folder before creating a duplicate.</p>
+    <code class="snippet">If length(outputs('List_existing_Opportunity_Document_Location')) is equal to 0
+  &rarr; Add a new Document Location for Opportunity, set Parent Location to the new folder
+Else
+  &rarr; Set Parent Location to the existing Document Location</code>
+    <div class="tags">
+      <span class="tag">Dynamics 365 CE</span>
+      <span class="tag">Power Automate</span>
+      <span class="tag">Dataverse</span>
+      <span class="tag">SharePoint</span>
+    </div>
+  </div>
+
+  <div class="project">
+    <h3>Hands-On with Dynamics 365, Power Automate &amp; Power BI</h3>
+    <div class="role">Analyst / D365 Consultant</div>
+    <p>Reporting from Dynamics 365 relied on a manual process &mdash; extract data, upload to SharePoint, refresh Power BI. I built a Power Platform proof-of-concept that automates the whole chain:</p>
+    <ul class="desc-list">
+      <li>Extracts data from Dynamics 365 Business Central (same pattern applies to D365 CE via Dataverse)</li>
+      <li>Transforms it into a structured CSV</li>
+      <li>Uploads it to OneDrive/SharePoint</li>
+      <li>Refreshes the Power BI dataset on a schedule</li>
+    </ul>
+    <p>Power Automate couldn't consume the existing D365 personal view directly, so I rebuilt the logic as a FetchXML query joining Accounts and System Users, selecting only the required fields.</p>
+    <div class="tags">
+      <span class="tag">Dynamics 365</span>
+      <span class="tag">Business Central</span>
+      <span class="tag">Power Automate</span>
+      <span class="tag">Power BI</span>
+      <span class="tag">FetchXML</span>
+    </div>
+  </div>
+
+  <div class="project">
+    <h3>Homeowner Journey with Lead Triggers</h3>
+    <div class="role">Marley New Zealand Ltd &middot; Analyst / D365 Consultant</div>
+    <p>A nurture journey with attribute-based branching (filtering out non-homeowners by job title), timed email sequencing, and a hand-off to a Power Automate cloud flow when a lead engages &mdash; automatically creating a Dataverse Lead record and assigning a follow-up task to the right sales rep. Designed generically enough to extend to auto-qualifying a lead the moment a client clicks a link, rather than waiting on manual review.</p>
+    <div class="tags">
+      <span class="tag">Dynamics 365</span>
+      <span class="tag">Power Automate</span>
+      <span class="tag">Dataverse</span>
+      <span class="tag">Lead Lifecycle</span>
+    </div>
+  </div>
+
+  <div class="project">
+    <h3>Order Reconciliation Agent</h3>
+    <div class="role">Independent project</div>
+    <p>An automation agent combining a JotForm webhook, the Twilio API, and Claude to reconcile customer orders end-to-end. Orders submitted via WhatsApp/Facebook trigger the webhook, the agent checks PayPal's API for a matching payment, updates status in a tracking sheet, and sends the customer an SMS confirmation via Twilio &mdash; unmatched orders are automatically rechecked hourly rather than needing manual follow-up.</p>
+    <div class="tags">
+      <span class="tag">Claude / AI Agent</span>
+      <span class="tag">Twilio API</span>
+      <span class="tag">Webhooks</span>
+      <span class="tag">PayPal API</span>
+    </div>
+  </div>
+
+  <footer>
+    <div>Microsoft Certified Power Platform Functional Consultant (PL-200) &middot; Microsoft Certified Azure Administrator (AZ-104)</div>
+    <div class="certs">Available for D365 CE / Power Platform consulting and ad-hoc advisory. Get in touch: <a href="mailto:Anita_kuang@hotmail.com" style="color:var(--accent);">Anita_kuang@hotmail.com</a></div>
+  </footer>
+
+</div>
+</body>
+</html>
