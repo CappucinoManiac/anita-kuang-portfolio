@@ -236,7 +236,7 @@ Else
     <h3>Order Reconciliation Agent</h3>
     <div class="role">Independent project</div>
     <p>A Python-based automation agent combining a JotForm webhook, the Twilio API, and Claude to reconcile customer orders end-to-end. Orders submitted via WhatsApp/Facebook trigger the webhook, the agent checks PayPal's API for a matching payment, updates status in a tracking sheet, and sends the customer an SMS confirmation via Twilio &mdash; unmatched orders are automatically rechecked hourly rather than needing manual follow-up.</p>
-    <img src="images/order-recon-workflow.png" alt="Order Reconciliation Agent end-to-end workflow diagram: order form to Jotform webhook to Google Sheet, PayPal API payment check, status update, and Twilio SMS notification">
+    <img src="images/order-recon-workflow.png" alt="Order Reconciliation Agent end-to-end workflow diagram: order form to Jotform webhook to Google Sheet, PayPal API payment check, status update, and Twilio SMS notification" style="max-width:380px; margin:0 auto 12px;">
     <p style="font-style:italic; color:var(--grey); font-size:0.85rem; margin-top:-4px;">End-to-end workflow: form submission &rarr; webhook &rarr; payment check &rarr; status update &rarr; SMS confirmation.</p>
     <div class="tags">
       <span class="tag">Python</span>
